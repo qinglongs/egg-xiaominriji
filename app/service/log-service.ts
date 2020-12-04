@@ -1,6 +1,8 @@
 import { Service } from 'egg';
 import { GetLogListParams, LogData, GetLogListRetrun } from '../utils/types/log-types';
 
+const addLogSql = { image: 'https://img95.699pic.com/photo/50046/5562.jpg_wh300.jpg', title: '测试插入数据', content: '测试内容' };
+
 
 class LogService extends Service {
   /**
@@ -28,7 +30,7 @@ class LogService extends Service {
    * @function 添加日志
    */
   async addLog() {
-    await this.app.mysql.insert('log', { image: 'https://img95.699pic.com/photo/50046/5562.jpg_wh300.jpg', title: '测试插入数据', content: '测试内容' });
+    await this.app.mysql.insert('log', addLogSql);
 
   }
 
