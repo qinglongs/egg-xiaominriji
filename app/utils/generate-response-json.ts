@@ -4,7 +4,7 @@ interface Generate<T> { code: number, data: T | any, msg: string }
 /**
  * @function 生成返回的json
  * @param data 返回的数据
- * @param msg 描述文字
+ * @param msg 成功描述
  */
 export function generateSuccess<T>(data?: T, msg = 'success'): Generate<T> {
   return { code: 0, data: data || null, msg };
