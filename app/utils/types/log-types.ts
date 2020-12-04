@@ -1,4 +1,4 @@
-// 请日志求ri'zhi分页参数
+// 日志分页参数
 export type GetLogListParams = {
   page: number;
   size: number;
