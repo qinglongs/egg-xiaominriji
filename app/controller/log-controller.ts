@@ -1,5 +1,5 @@
 import { Controller } from 'egg';
-import { generateSuccess, generateError } from '../utils/generate-response-json';
+import { generateSuccess, generateError } from '../utils/generate-response-json/generate-response-json';
 import { GetLogListParams, LogData, GetLogListRetrun } from '../utils/types/log-types';
 
 type PagingData = GetLogListParams & GetLogListRetrun<LogData>;
