@@ -56,7 +56,9 @@ class LogService extends Service {
    * @param id 日志id
    */
   async delLog(id: number) {
-    return await this.app.mysql.delete(LOG_TABLE_NAME, { id });
+    // delete from log where id=xxx;
+    console.log(id);
+    return await this.app.mysql.delete(LOG_TABLE_NAME, { id: +id });
   }
 }
 

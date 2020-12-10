@@ -39,7 +39,8 @@ class LogController extends Controller {
    */
   public async delLog() {
     const { ctx } = this;
-    ctx.service.logService.delLog(ctx.request.body.id);
+    const { id } = ctx.request.body;
+    ctx.service.logService.delLog(id);
     ctx.body = generateSuccess();
   }
 
