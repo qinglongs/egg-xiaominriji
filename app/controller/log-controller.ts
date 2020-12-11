@@ -30,7 +30,7 @@ class LogController extends Controller {
    */
   public async postAddLog() {
     const { ctx } = this;
-    await ctx.service.logService.addLog();
+    await ctx.service.logService.addLog(ctx.request.body);
     ctx.body = generateSuccess();
   }
 

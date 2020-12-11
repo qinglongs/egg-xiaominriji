@@ -30,8 +30,8 @@ class LogService extends Service {
   /**
    * @function 添加日志
    */
-  async addLog() {
-    await this.app.mysql.insert(LOG_TABLE_NAME, addLogSql);
+  async addLog(params: any) {
+    await this.app.mysql.insert(LOG_TABLE_NAME, { ...addLogSql, ...params });
 
   }
 
