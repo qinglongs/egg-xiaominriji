@@ -3,9 +3,7 @@ import { generateSuccess, generateError } from '../utils/generate-response-json/
 import { GetLogListParams, LogData, GetLogListRetrun } from '../utils/types/log-types';
 
 type PagingData = GetLogListParams & GetLogListRetrun<LogData>;
-
 class LogController extends Controller {
-
   /**
    * @function 获取日志列表数据
    */
