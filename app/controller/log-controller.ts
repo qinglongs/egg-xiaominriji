@@ -11,10 +11,8 @@ class LogController extends Controller {
    */
   public async getLogList() {
     const { ctx } = this;
-
     // 获取参数
     const query = ctx.request.query as unknown as GetLogListParams;
-
     try {
       const listData = await ctx.service.logService.getLogList(
         query,
@@ -31,7 +29,7 @@ class LogController extends Controller {
   public async postAddLog() {
     const { ctx } = this;
     await ctx.service.logService.addLog(ctx.request.body);
-    ctx.body = generateSuccess();
+    ctx.body = generateSuccess<null>(null);
   }
 
   /**
@@ -41,7 +39,7 @@ class LogController extends Controller {
     const { ctx } = this;
     const { id } = ctx.request.body;
     ctx.service.logService.delLog(id);
-    ctx.body = generateSuccess();
+    ctx.body = generateSuccess<null>(null);
   }
 
   /**
@@ -59,7 +57,7 @@ class LogController extends Controller {
   public async updateLog() {
     const { ctx } = this;
     ctx.service.logService.updateLog(ctx.request.body);
-    ctx.body = generateSuccess();
+    ctx.body = generateSuccess<null>(null);
   }
 }
 

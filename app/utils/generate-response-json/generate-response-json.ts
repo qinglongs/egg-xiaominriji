@@ -6,7 +6,7 @@ interface Generater<T> { code: number, data: T | any, msg: string }
  * @param data 返回的数据
  * @param msg 成功描述
  */
-export function generateSuccess<T>(data?: T, msg = 'success'): Generater<T> {
+export function generateSuccess<T>(data: T, msg = 'success'): Generater<T> {
   return { code: 0, data: data || null, msg };
 }
 
@@ -15,7 +15,7 @@ export function generateSuccess<T>(data?: T, msg = 'success'): Generater<T> {
  * @param data 返回的错误数据
  * @param msg 错误描述
  */
-export function generateError<T>(data?: T, msg = '出错了，请联系管理员', code = 1000): Generater<T> {
+export function generateError<T>(data: T, msg = '出错了，请联系管理员', code = 1000): Generater<T> {
   return { code, data: data || null, msg };
 }
 

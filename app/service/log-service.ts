@@ -11,19 +11,15 @@ class LogService extends Service {
    */
   async getLogList(query: GetLogListParams): Promise<GetLogListRetrun<LogData>> {
     const { page: offset, size: limit } = query;
-
     // 参数
     const selectQuery = {
       offset: (offset - 1) * limit,
       limit: +limit,
     };
-
-    // 获取分页数据
+    // 获取分页数据 select * from log limit=x,offset=y;
     const list = await this.app.mysql.select(LOG_TABLE_NAME, selectQuery);
-
     // 获取数据总数
     const total = await this.app.mysql.count(LOG_TABLE_NAME);
-
     return { list, total };
   }
 
@@ -31,8 +27,8 @@ class LogService extends Service {
    * @function 添加日志
    */
   async addLog(params: any) {
+    // insert into log (a,b,c)values(va,vb,vc);
     await this.app.mysql.insert(LOG_TABLE_NAME, { ...addLogSql, ...params });
-
   }
 
   /**
@@ -40,6 +36,7 @@ class LogService extends Service {
    * @param id 日志id
    */
   async selectLogDetail(id: number) {
+    // selet * from log where id=xxx;
     return await this.app.mysql.get(LOG_TABLE_NAME, { id });
   }
 
@@ -48,6 +45,7 @@ class LogService extends Service {
    * @param data 更新的数据
    */
   async updateLog(data: LogData) {
+    // update log set  xxx=xxx,yyy=yyy where xxx=aaa;
     return await this.app.mysql.update(LOG_TABLE_NAME, data);
   }
 
@@ -57,7 +55,6 @@ class LogService extends Service {
    */
   async delLog(id: number) {
     // delete from log where id=xxx;
-    console.log(id);
     return await this.app.mysql.delete(LOG_TABLE_NAME, { id: +id });
   }
 }
