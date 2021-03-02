@@ -19,4 +19,5 @@ declare module 'egg' {
         };
         jwt: any;
     }
+
 }

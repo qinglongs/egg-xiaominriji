@@ -4,12 +4,12 @@
 import 'egg';
 import ExportBillController from '../../../app/controller/bill-controller';
 import ExportLogController from '../../../app/controller/log-controller';
-import ExportLoginController from '../../../app/controller/login-controller';
+import ExportUserController from '../../../app/controller/user-controller';
 
 declare module 'egg' {
   interface IController {
     billController: ExportBillController;
     logController: ExportLogController;
-    loginController: ExportLoginController;
+    userController: ExportUserController;
   }
 }

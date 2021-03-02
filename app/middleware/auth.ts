@@ -15,7 +15,6 @@ module.exports = (_, app) => {
       // 把Bearer 截取掉，解析的时候不需要加上Bearer
       const subStrToken = token.substring(7);
 
-
       // 解析token
       try {
         const decode = await app.jwt.verify(subStrToken, app.config.jwt.secret);
@@ -23,7 +22,7 @@ module.exports = (_, app) => {
         await next();
       } catch (err) {
         ctx.status = 401;
-        ctx.body = app.config.generateError(null, 'token失效或解析错误', 401);
+        ctx.body = ctx.helper.generateError(null, 'token失效或解析错误', 401);
       }
     }
   };

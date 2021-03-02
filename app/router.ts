@@ -20,5 +20,9 @@ export default (app: Application) => {
 
 
   // 登录
-  router.post('/user/login', controller.loginController.login);
+  router.post('/user/login', controller.userController.login);
+  // 注册用户
+  router.post('/user/register', controller.userController.register);
+  // 编辑用户
+  router.put('/user/edit', controller.userController.editUser);
 };

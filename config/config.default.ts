@@ -62,7 +62,7 @@ export default (appInfo: EggAppInfo) => {
   };
 
   // 不需要验证token的路由
-  config.routerAuth = ['/user/login'];
+  config.routerAuth = ['/user/login', '/user/register'];
 
   // 生成返回信息的方法
   config.generateSuccess = generateSuccess;

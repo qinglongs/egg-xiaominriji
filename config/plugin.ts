@@ -15,6 +15,11 @@ const plugin: EggPlugin = {
     enable: true,
     package: 'egg-cors',
   },
+  // 参数校验
+  validate: {
+    enable: true,
+    package: 'egg-validate',
+  },
 };
 
 export default plugin;

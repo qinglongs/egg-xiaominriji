@@ -3,7 +3,7 @@
 
 import 'egg';
 import ExportAuth from '../../../app/middleware/auth';
-import ExportTest from '.../../../app/middleware/test'
+import ExportTest from '../../../app/middleware/test';
 
 declare module 'egg' {
   interface IMiddleware {

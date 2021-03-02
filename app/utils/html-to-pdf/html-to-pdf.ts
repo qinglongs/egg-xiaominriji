@@ -10,8 +10,10 @@ const htmlToPdf = async (uri: string) => {
   await page.goto(uri, {
     waitUntil: 'load',
   });
+  // 得到pdf
   const pdf = await page.pdf({ path: '', format: 'a4' });
 
+  // 关闭浏览器
   await browser.close();
 
   return pdf;
