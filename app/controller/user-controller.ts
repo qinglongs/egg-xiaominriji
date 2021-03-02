@@ -15,6 +15,7 @@ class UserController extends Controller {
       const token = await this.app.jwt.sign({
         username: request.body.username,
         password: request.body.password,
+        iat: +new Date() + (1000 * 60),
       }, app.config.jwt.secret);
 
       if (token) {

@@ -1,9 +1,5 @@
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
 
-import { generateSuccess, generateError } from '../app/utils/generate-response-json/generate-response-json';
-
-import htmlToPdf from '../app/utils/html-to-pdf/html-to-pdf';
-
 // https://eggjs.org/zh-cn/basics/config.html
 export default (appInfo: EggAppInfo) => {
   const config = {} as PowerPartial<EggAppConfig>;
@@ -63,13 +59,6 @@ export default (appInfo: EggAppInfo) => {
 
   // 不需要验证token的路由
   config.routerAuth = ['/user/login', '/user/register'];
-
-  // 生成返回信息的方法
-  config.generateSuccess = generateSuccess;
-  config.generateError = generateError;
-
-  // 网页转pdf
-  config.htmlToPdf = htmlToPdf;
 
   // add your special config in here
   const bizConfig = {
