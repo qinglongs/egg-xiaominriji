@@ -1,10 +1,10 @@
 import { Application } from 'egg';
 
 export default (app: Application) => {
-  const { controller, router } = app;
+  const { controller, router, jwt } = app;
 
   // 获取日志列表数据
-  router.get('/log-list', controller.logController.getLogList);
+  router.get('/log-list', jwt, controller.logController.getLogList);
 
   // 添加日志
   router.post('/log-list', controller.logController.postAddLog);
@@ -19,5 +19,6 @@ export default (app: Application) => {
   router.post('/log-update', controller.logController.updateLog);
 
 
-  // 账单
+  // 登录
+  router.post('/user/login', controller.loginController.login);
 };

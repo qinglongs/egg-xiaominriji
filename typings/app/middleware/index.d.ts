@@ -2,10 +2,12 @@
 // Do not modify this file!!!!!!!!!
 
 import 'egg';
-import ExportTest from '../../../app/middleware/test';
+import ExportAuth from '../../../app/middleware/auth';
+import ExportTest from '.../../../app/middleware/test'
 
 declare module 'egg' {
   interface IMiddleware {
+    auth: typeof ExportAuth;
     test: typeof ExportTest;
   }
 }

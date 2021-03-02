@@ -17,5 +17,6 @@ declare module 'egg' {
             delete: MysqlMethod;
             beginTransaction: Transaction;
         };
+        jwt: any;
     }
 }

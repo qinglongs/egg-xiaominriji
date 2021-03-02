@@ -9,6 +9,7 @@ class LogController extends Controller {
    */
   public async getLogList() {
     const { ctx } = this;
+
     // 获取参数
     const query = ctx.request.query as unknown as GetLogListParams;
     try {

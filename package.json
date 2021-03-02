@@ -23,8 +23,12 @@
   },
   "dependencies": {
     "egg": "^2.6.1",
+    "egg-cors": "^2.2.3",
+    "egg-jwt": "^3.1.7",
     "egg-mysql": "^3.0.0",
-    "egg-scripts": "^2.6.0"
+    "egg-scripts": "^2.6.0",
+    "puppeteer": "^8.0.0",
+    "puppeteer-core": "^8.0.0"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.40",

@@ -15,7 +15,7 @@ export function generateSuccess<T>(data: T, msg = 'success'): Generater<T> {
  * @param data 返回的错误数据
  * @param msg 错误描述
  */
-export function generateError<T>(data: T, msg = '出错了，请联系管理员', code = 1000): Generater<T> {
+export function generateError<T>(data: T, msg = '这是什么问题呢，去问问管理员吧', code = 1000): Generater<T> {
   return { code, data: data || null, msg };
 }
 
