@@ -40,6 +40,7 @@ export default (appInfo: EggAppInfo) => {
   };
 
 
+  // jwt
   config.jwt = {
     secret: '123456',
   };
@@ -58,7 +59,7 @@ export default (appInfo: EggAppInfo) => {
   };
 
   // 不需要验证token的路由
-  config.routerAuth = ['/user/login', '/user/register'];
+  config.routerAuth = ['/user/login', '/user/register', '/user/unregister'];
 
   // add your special config in here
   const bizConfig = {

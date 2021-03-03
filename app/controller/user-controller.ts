@@ -48,12 +48,24 @@ class UserController extends Controller {
 
     try {
       await this.service.userService.editUser(ctx.request.body);
-
       ctx.body = ctx.helper.generateSuccess(null);
     } catch (e) {
       ctx.body = ctx.helper.generateError(null);
     }
+  }
 
+  /**
+   * @function 注销用户
+   */
+  async unRegister() {
+    const { ctx } = this;
+    const { id } = ctx.request.query;
+    try {
+      await this.service.userService.unRegister(+id);
+      ctx.body = ctx.helper.generateSuccess<number>(+id);
+    } catch (e) {
+      ctx.body = ctx.helper.generateError(null, '注销失败，请联系管理员', 400);
+    }
   }
 }
 
